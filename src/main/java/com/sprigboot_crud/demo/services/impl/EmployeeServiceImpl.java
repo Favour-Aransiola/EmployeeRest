@@ -45,6 +45,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public String deleteEmployee(Long id) {
+        System.out.println(id);
         Employee employeeExist = getSingleEmployee(id).orElseThrow(()-> new ResponseNotFound("Employee", "Employee", id));
        employeeRepository.delete(employeeExist);
        return "Sucess";
